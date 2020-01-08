@@ -1,0 +1,26 @@
+function largestPrimeFactor(number) {
+//create Array   
+ let primes=[2];
+
+//loop thru all numbers checking if prime
+for(let j=2; j<=number; j++) {
+    if (number%j===0){
+    console.log(j);
+    primes.push(j);
+    }  
+}
+console.log(primes);
+console.log(number);
+let answer=0;
+//loop thru primes list and check if divides into entered number
+for(let i=0;i<primes.length;i++)
+    if(number%primes[i]===0){
+        number=number/primes[i];
+        answer=primes[i];
+    } 
+console.log(answer);
+return(answer);
+  //return true;
+}
+
+largestPrimeFactor(13195);
