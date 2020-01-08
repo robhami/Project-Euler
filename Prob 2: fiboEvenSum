@@ -1,14 +1,16 @@
 function fiboEvenSum(n) {
-  // You can do it!
+ 
 let fib =0;
 let array =[1,2]; 
 let answer = 0;
+//loop through numbers up to parameter value
   for (let i=1;i<n-1;i++){
-
+// take number and add prior number
     let num=(array[i])
     let prevNum=(array[i-1]);
     let fib=(num+prevNum);
     array.push(fib);
+// if answer even sum it to main answer
     if (fib%2===0){
       answer = answer+fib;
     }
