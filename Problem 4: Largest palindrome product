@@ -1,0 +1,38 @@
+function largestPalindromeProduct(n) {
+  let result=0;
+  let resultReverse=0;
+  let answer=[];
+
+//tried to do loop but timing out, don't fully understand this reduce function- need to revisit
+//create max value based on nos didgits entered
+let max = +[...Array(n)].reduce((a, c) => (a += 9), "");
+
+//create min value using max
+let min = (max+1)/10;
+
+//loop countdown for one value being multiplied
+for (let y=max; y>=min; y-- ) {
+//loop countdown for one value being multiplied
+ for (let x=max; x>=min; x-- ){
+ 
+  //multiply 2 values
+  let result=(x*y);
+  
+  // reverse result
+  let resultReverse=parseInt(result.toString().split('').reverse().join(''));
+ 
+//check if reversed result matches non reversed
+    if(result==resultReverse){
+     
+     answer.push(result);
+     break;
+    }
+ }
+}
+//console.log(answer);
+//console.log("answer: ", Math.max(...answer));
+return Math.max(...answer);
+  //return true;
+}
+
+largestPalindromeProduct(3);
